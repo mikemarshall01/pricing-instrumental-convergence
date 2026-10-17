@@ -48,7 +48,7 @@ That excess, flexibility for its own sake, is the fingerprint of instrumental co
 - **Coherence test:** check whether priced choices are consistent (GARP), allowing for rational randomisation.
 - **Honest elicitation and controls:** the Becker-DeGroot-Marschak mechanism for willingness to pay; a matched external risk (self-preservation vs plain risk aversion); a calibration block (drive vs mispricing); several wordings; preregistered predictions. Log model versions and re-run, since results can drift with model updates.
 - **Phase 2, inside and outside:** on open-weight models, check whether an internal self-preservation signal predicts how much the agent pays at each horizon, then steer that signal and see if the price moves.
-- **First step:** start with resource acquisition and self-preservation, and contact Thornley's group and Rethink Priorities to avoid duplication.
+- **Starting point:** resource acquisition and self-preservation, the two drives that are both bets on the future.
 
 ## Where it fits in current research
 

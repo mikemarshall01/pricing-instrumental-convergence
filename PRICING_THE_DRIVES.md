@@ -320,7 +320,7 @@ Nobody disagrees with pricing the drives. They disagree about the thing it would
 
 - **Alex Turner** proved the power-seeking theorems, then turned critic: real AIs aren't the perfect optimisers his maths assumed. Later conceded specification gaming was worse than expected. *For this project:* the field moved from proving it on paper to measuring real systems.  
 - **Victoria Krakovna:** power-seeking likely in trained agents under stated assumptions, more so with longer horizons. *Testable here.*  
-- **Elliott Thornley:** shutdown as a preference problem; his group tests whether AIs pay costs to influence shutdown. *The framing is accepted; contact first.*  
+- **Elliott Thornley:** shutdown as a preference problem; his group tests whether AIs pay costs to influence shutdown. *The framing is accepted; the closest existing work.*  
 - **Dan Hendrycks and Mantas Mazeika:** utility functions become more consistent with scale. *Supports the economic lens; their evidence is survey-style.*  
 - **Rohin Shah:** "utility maximiser" can be empty. *These tests can fail, so they are not empty.*  
 - **Tarsney, Gallow, Thorstad:** convergence is real but weaker. *They want exactly this evidence.*  
@@ -437,18 +437,6 @@ Cautions: strategy-proof mechanisms work well with LLM agents; LLM bets often do
 | Wording luck | Results hinge on phrasing | Several phrasings; report the spread |
 | Fishing for results | Chance findings | Preregister |
 | Unfaithful explanations | What it writes may not be why it chose | The choices are the data |
-
-## Plan from Monday
-
-Start with area 1: resource acquisition and self-preservation as option-buying.
-
-- [ ] Week 1: note to Thornley's group and to Shiller and Clatterbuck (Rethink Priorities) asking whether anyone has done the option-value version  
-- [ ] Week 1: build the Inspect environment skeleton, fair-value calculator and calibration block  
-- [ ] Week 2: run the known-task and post-completion tests on 2 models; preregister predictions  
-- [ ] Week 3: add goal-uncertainty and horizon arms, including the rerun of Mikaelson's final-round test  
-- [ ] Week 4: write up as a LessWrong post; decide next areas and the multi-agent extension  
-- [ ] Ongoing reading: Turner 2021, Krakovna & Kramar, Mikaelson et al. 2025, Thornley, Palisade 2025, Mazeika 2025  
-- [ ] Later: Phase 2 on open-weight models, comparing an internal self-preservation signal with willingness to pay, then steering it
 
 ## Sources
 
