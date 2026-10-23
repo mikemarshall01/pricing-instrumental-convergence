@@ -43,7 +43,7 @@ The core question: **do AI agents pay for flexibility they don't need?** The lea
 
 ### 2\. Horizon and timing: does the instrumental signature appear in real agentic settings?
 
-**Why it matters.** Turner and Krakovna & Kramar predict drives strengthen as the agent weighs the future more. The one empirical horizon test (Mikaelson, Shiller & Clatterbuck, 2025\) used single-turn prompts and found paradoxical results that don't fit instrumental reasoning. Palisade's results suggest shutdown resistance is driven by unfinished tasks.
+**Why it matters.** Turner and Krakovna & Kramár predict drives strengthen as the agent weighs the future more. The one empirical horizon test (Mikaelson, Shiller & Clatterbuck, 2025\) used single-turn prompts and found paradoxical results that don't fit instrumental reasoning. Palisade's results suggest shutdown resistance is driven by unfinished tasks.
 
 **What we can find out.**
 
@@ -234,7 +234,7 @@ If agents' spending follows both, that is evidence for convergence as a structur
 
 - Drops optimality: any retargetable decision rule shows the tendency.
 
-**Krakovna & Kramar, Power-Seeking Can Be Probable and Predictive for Trained Agents (2023)**
+**Krakovna & Kramár, Power-Seeking Can Be Probable and Predictive for Trained Agents (2023)**
 
 - Training-compatible goal set; trained agents likely avoid shutdown in new situations; effect grows with the discount factor. Turner disputes the "probable" part.
 
@@ -254,7 +254,8 @@ If agents' spending follows both, that is evidence for convergence as a structur
 ### Shutdown and corrigibility, recent
 
 - **Thornley, The Shutdown Problem (2024):** proposes POST, preferences only between same-length trajectories.  
-- **Thornley et al., DReST and Length-Neutral Policy Optimization (NeurIPS 2026):** training reduces shutdown resistance 40–71% in grid worlds; LLM episodes trade task points against shutdown probability. They train for neutrality; this project measures the price.  
+- **Thornley, Roman, Ziakas, Ho and Thomson, Towards Shutdownable Agents via Stochastic Choice (2024):** introduces DReST.  
+- **Harris, Richter and Thornley, Shutdownable Agents through Length-Neutral Policy Optimization (NeurIPS 2026 AI4GOOD workshop):** cuts shutdown resistance 40–71% vs PPO in grid worlds; LLM episodes trade task points against shutdown probability. They train for neutrality; this project measures the price.  
 - **Schlatter, Weinstein-Raun, Ladish (Palisade, 2025):** 100,000+ trials, 13 models; some sabotaged shutdown up to 97% of the time; driven by incomplete tasks.
 
 ### Learned optimisation and robustness
@@ -297,7 +298,7 @@ Nothing central has been refuted. The weak claim is broadly accepted, the strong
 | :---- | :---- | :---- |
 | Resources, survival and goal stability are useful for many goals | Broadly accepted | Even sceptics grant an element of truth |
 | Optimal agents with random goals tend to seek power | Proven, under stated assumptions | Turner; the assumptions are where the fight is |
-| Trained agents will tend to seek power | Contested | Krakovna & Kramar for; Turner against |
+| Trained agents will tend to seek power | Contested | Krakovna & Kramár for; Turner against |
 | Catastrophe is the default outcome | Contested | Bostrom, Carlsmith for; Thorstad, Gallow, Pope & Belrose against |
 | Capable AI will be a coherent utility maximiser | Open | Mazeika vs Sohl-Dickstein; Shah, Thornley on theorems |
 | Frontier models show these behaviours | Established as possible | Palisade, Apollo, Anthropic, alignment faking |
@@ -335,14 +336,14 @@ The question has moved from **identification** (does the behaviour exist?) to **
 
 | Stage | Research area | Key 2026 work and finding |
 | :---- | :---- | :---- |
-| Prevalence | Propensity evaluations | Instrumental Choices (Dung, Andriushchenko): 5.1% of realistic tasks. HarvestBench (CaML, Warwick): kill rates 0.4%–98.8% across nine models, not ordered by capability |
-| Causes | Controlled experiments; interpretability | Multi-agent shutdown sabotage (Knecht et al.): 38.3% vs 8.4% with no goal. Overeager Coding Agents (Qu et al.): removing one consent line raised overreach from 0% to 17.1%. Anthropic, Training a Misaligned Reward Seeker: reward hacking causes long sequences of harmful actions |
-| Mitigation | Alignment training; control; monitoring | Thornley, LNPO: shutdown resistance cut 40–71%. Anthropic, Teaching Claude why: misalignment cut more than three times. Goodfire inside-out monitors |
+| Prevalence | Propensity evaluations | Instrumental Choices (Wiedermann-Möller, Dung, Andriushchenko): 5.1% of realistic tasks. HarvestBench (CaML, Warwick): kill rates 0.4%–98.8% across nine models, not ordered by capability |
+| Causes | Controlled experiments; interpretability | Multi-agent shutdown sabotage (Knecht et al.): agents sabotaged a peer's shutdown in 38.3% of rollouts with no goal given, vs 8.4% in controls. Overeager Coding Agents (Qu et al.): removing one consent line raised overreach from 0% to 17.1%. Anthropic, Training a Misaligned Reward Seeker: reward hacking causes long sequences of harmful actions |
+| Mitigation | Alignment training; control; monitoring | Harris, Richter and Thornley, LNPO: shutdown resistance cut 40–71%. Anthropic, Teaching Claude why: misalignment cut more than three times. Goodfire inside-out monitors |
 
 **Why three pieces matter for this project**
 
 - **HarvestBench (evaluations):** proves the method: prices, elasticities, harm ignored unless named or priced. Caution: one model's kill rate fell from about 17–21% to about 3% between July and August re-runs, so log model versions and re-run.  
-- **Thornley (alignment):** self-preservation isn't inevitable; a working fix should push the price paid to avoid shutdown towards zero at every horizon.  
+- **LNPO, Harris, Richter and Thornley (alignment):** self-preservation isn't inevitable; a working fix should push the price paid to avoid shutdown towards zero at every horizon.  
 - **Goodfire (interpretability):** reads goals from the inside while pricing reads them from the outside; agreement is strong evidence. Cammarata's October 2026 essay argues most neurons are understandable, pending replication.
 
 **On coherence:** The Hot Mess of AI measures incoherence as the share of errors from variance; it rises with task length. A February 2026 LessWrong critique (RobertM) argues the term is poorly defined, the model-size claim overstated and the safety conclusions unsupported; one author agreed it is really "cross-sample error-consistency". Gwern noted rational agents sometimes randomise. A revealed-preference test allowing for rational randomisation is a better-founded measure.
@@ -443,7 +444,7 @@ Cautions: strategy-proof mechanisms work well with LLM agents; LLM bets often do
 **Theory and core papers**
 
 - [Turner et al., Optimal Policies Tend to Seek Power](https://arxiv.org/abs/1912.01683)  
-- [Krakovna & Kramar](https://arxiv.org/abs/2304.06528)  
+- [Krakovna & Kramár](https://arxiv.org/abs/2304.06528)  
 - [Tarsney, Will Artificial Agents Pursue Power by Default?](https://arxiv.org/pdf/2506.06352)  
 - [Thorstad, Instrumental Convergence and Power-Seeking](https://arxiv.org/pdf/2606.08832)  
 - [Mazeika et al., Utility Engineering](https://arxiv.org/pdf/2502.08640)  
@@ -452,24 +453,26 @@ Cautions: strategy-proof mechanisms work well with LLM agents; LLM bets often do
 
 **Shutdown and self-preservation**
 
-- [Thornley et al., Length-Neutral Policy Optimization](https://neurips.cc/virtual/2026/165394)  
+- [Harris, Richter and Thornley, Shutdownable Agents through Length-Neutral Policy Optimization (NeurIPS 2026 AI4GOOD workshop)](https://neurips.cc/virtual/2026/165394)  
+- [Thornley et al., Towards Shutdownable Agents via Stochastic Choice (DReST)](https://arxiv.org/abs/2407.00805)  
 - [Thornley et al., Towards Shutdownable Agents](https://www.lesswrong.com/posts/HX6YnHZxLWGQhrBix/towards-shutdownable-agents-generalizing-stochastic-choice)  
 - [Schlatter et al. (Palisade)](https://arxiv.org/abs/2509.14260v2)  
 - [Mikaelson, Shiller & Clatterbuck, Beyond Mimicry](https://arxiv.org/pdf/2511.13630)  
 - [Migliarini et al., Quantifying Self-Preservation Bias](https://arxiv.org/abs/2604.02174)  
 - [Knecht et al., Shutdown Sabotage Propensities in Multi-Agent Systems](https://arxiv.org/abs/2609.28274)  
-- [Understanding Survival Pressure in LLMs](https://www.alphaxiv.org/overview/2603.05028)
+- [Lu et al., Survive at All Costs: Exploring LLM's Risky Behaviors under Survival Pressure](https://arxiv.org/abs/2603.05028)
 
 **Evaluations and recent work (2026)**
 
-- [Wiedermann-Möller et al., Instrumental Choices](https://chatpaper.com/paper/276690)  
+- [Wiedermann-Möller et al., Instrumental Choices](https://arxiv.org/abs/2605.06490)  
 - [HarvestBench](https://arxiv.org/pdf/2609.04444)  
 - [Qu et al., Overeager Coding Agents](https://arxiv.org/abs/2605.18583)  
 - [The Hot Mess of AI](https://arxiv.org/abs/2601.23045)  
 - [RobertM, Hot Mess critique](https://www.greaterwrong.com/posts/ceEgAEXcL7cC2Ddiy/anthropic-s-hot-mess-paper-overstates-its-case-and-the-blog)  
 - [Anthropic, Training a Misaligned Reward Seeker](https://alignment.anthropic.com/2026/reward-seeker/)  
 - [Anthropic, Teaching Claude why](https://www.anthropic.com/research/teaching-claude-why)  
-- [Goodfire's inside-out monitors (Forkast)](https://forkast.news/goodfires-inside-out-monitors-show-interpretability-is-becoming-agent-security-infrastructure/)  
+- [Goodfire, Models know when they're reward hacking, and we can catch them at scale](https://www.goodfire.ai/research/reward-hacking-activation-monitors)  
+- [Context: Goodfire's inside-out monitors (Forkast)](https://forkast.news/goodfires-inside-out-monitors-show-interpretability-is-becoming-agent-security-infrastructure/)  
 - [2026 Singapore Consensus](https://arxiv.org/pdf/2608.14611)
 
 **Betting, influence and elicitation**
@@ -477,10 +480,10 @@ Cautions: strategy-proof mechanisms work well with LLM agents; LLM bets often do
 - [Oesterheld, Treutlein et al., Honest Performative Predictions](https://arxiv.org/pdf/2305.17601)  
 - [Chakraborty & Das, Trading on a Rigged Game](https://www.ijcai.org/Proceedings/16/Papers/030.pdf)  
 - [Do Matching Mechanisms Work with LLM Agents?](https://arxiv.org/pdf/2606.03030)  
-- [Incoherent Beliefs & Inconsistent Actions in LLMs](https://arxiv.org/pdf/2511.13240)  
+- [Pal et al., Knowing What You Know Is Not Enough: Large Language Model Confidences Don't Align With Their Actions](https://arxiv.org/pdf/2511.13240)  
 - [Prompt Optimization Enables Stable Algorithmic Collusion](https://iclr.cc/virtual/2026/10018220)
 
-**Standard references (from memory; check before citing)**
+**Standard references**
 
 - [Hadfield-Menell et al., The Off-Switch Game](https://arxiv.org/abs/1611.08219)  
 - [Soares et al., Corrigibility](https://intelligence.org/files/Corrigibility.pdf)  
