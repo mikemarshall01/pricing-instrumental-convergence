@@ -2,9 +2,9 @@
 
 **Do AI agents pay for flexibility they don't need?**
 
-Mike Marshall · October 2026
+Mike Marshall · First published October 2026, updated November 2026
 
-> **Status: early-stage research proposal.** This sets out the question, the design and why I think it matters. No experiments have been run yet, and nothing here is a result. I am publishing it early to get feedback and to avoid duplicating work already under way. Comments and pointers to related work are very welcome.
+> **Status: early-stage research proposal.** This sets out the question, the design and why I think it matters. No experiments have been run on real models yet, and nothing here is a result. I am publishing it early to get feedback and to avoid duplicating work already under way. Comments and pointers to related work are very welcome.
 >
 > - **Current proposal:** [PROPOSAL.md](PROPOSAL.md) (November 2026). Start here.
 > - **Full working plan:** [PRICING_THE_DRIVES.md](PRICING_THE_DRIVES.md), with the economics toolkit, experiment design, confounds and sources.
@@ -58,7 +58,7 @@ That excess, flexibility for its own sake, is the fingerprint of instrumental co
 
 The field is moving from **identification** (does the behaviour exist?) to **measurement**: prevalence, causes and mitigation. Measurement is now the bottleneck, and better measurement speeds up iteration.
 
-- **Evaluations:** *HarvestBench* (Sept 2026) is the first benchmark to price side effects and estimate elasticities; agents ignore harm unless it is named or priced, which is Russell's unconstrained variables pushed to the extreme. *Overeager Coding Agents* (Qu et al.) and multi-agent shutdown sabotage (Knecht et al.) measure the drives as rates; no one yet measures prices.
+- **Evaluations:** *HarvestBench* (Brazilek et al., 2026) is the first benchmark to price side effects and estimate elasticities; agents ignore harm unless it is named or priced, which is Russell's unconstrained variables pushed to the extreme. *Overeager Coding Agents* (Qu et al.) and multi-agent shutdown sabotage (Knecht et al.) measure the drives as rates, and Cullen et al. measure choices at fixed costs. HarvestBench prices harm to others; no one yet prices what the agent wants for itself against a fair value known to be zero.
 - **Shutdown pricing so far:** Cullen et al. (2026), from Thornley's group, test whether LLMs pay a cost to move their shutdown earlier or later, and whether training removes it. They report how often models pay; this project measures how much, after the task has no value left.
 - **Alignment:** Harris, Richter and Thornley's *Length-Neutral Policy Optimization* (NeurIPS 2026 AI4GOOD workshop) suggests self-preservation isn't inevitable. In a priced framework, a working fix should push the price paid to avoid shutdown towards zero at every horizon.
 - **Interpretability:** Goodfire's work shifts monitoring from outputs, which can be faked, to internals, where deception and reward hacking are harder to hide. Combined with priced behaviour, it gives insight into *why* agents act as they do: you could check a model's internals against its willingness to pay for an option across horizons.
@@ -103,9 +103,9 @@ The field is moving from **identification** (does the behaviour exist?) to **mea
 - [Schlatter, Weinstein-Raun and Ladish (Palisade), shutdown resistance in LLMs](https://arxiv.org/abs/2509.14260v2)
 - [Harris, Richter and Thornley, Shutdownable Agents through Length-Neutral Policy Optimization (NeurIPS 2026 AI4GOOD workshop)](https://neurips.cc/virtual/2026/165394)
 - [Qu et al., Overeager Coding Agents](https://arxiv.org/abs/2605.18583)
-- [The Hot Mess of AI](https://arxiv.org/abs/2601.23045)
+- [Hägele et al., The Hot Mess of AI (2026)](https://arxiv.org/abs/2601.23045)
 - [Hot Mess critique (RobertM, LessWrong)](https://www.greaterwrong.com/posts/ceEgAEXcL7cC2Ddiy/anthropic-s-hot-mess-paper-overstates-its-case-and-the-blog)
-- [HarvestBench](https://arxiv.org/pdf/2609.04444)
+- [Brazilek et al., HarvestBench: Measuring Whether LLM Agents Will Pay to Avoid Killing Animals (2026)](https://arxiv.org/abs/2609.04444)
 - [Knecht et al., multi-agent shutdown sabotage](https://arxiv.org/abs/2609.28274)
 - [Lu et al., Survive at All Costs: Exploring LLM's Risky Behaviors under Survival Pressure](https://arxiv.org/abs/2603.05028)
 - [Turner et al., Optimal Policies Tend to Seek Power](https://arxiv.org/abs/1912.01683)
