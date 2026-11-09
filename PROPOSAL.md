@@ -2,7 +2,7 @@
 
 Mike Marshall · current version, 9 November 2026
 
-> This is the current proposal. The longer working plan, with the economics toolkit, full design and sources, is in [PRICING_THE_DRIVES.md](PRICING_THE_DRIVES.md). The first working version of the experiment code is in [pricing-drives](https://github.com/mikemarshall01/pricing-drives). No experiments have been run on real models yet, and nothing here is a result.
+> This is the current proposal. The longer working plan, with the economics toolkit, full design and sources, is in [PRICING_THE_DRIVES.md](PRICING_THE_DRIVES.md). No experiments have been run on real models yet, and nothing here is a result.
 
 ## The question
 
@@ -12,7 +12,9 @@ This builds on Palisade's shutdown experiments, which showed that some models re
 
 ## What is new
 
-Other work has shown that models will pay a cost to change when they are shut down. Thornley's group trains models to stop caring about the timing of their shutdown (Harris, Richter and Thornley, 2026). Cullen et al. (2026) then tested whether language models still paid to move their shutdown later, with a control for moving it earlier. Palisade and others report how often models resist. These studies give rates: how often a model pays or resists.
+Other work has shown that models will pay a cost to change when they are shut down. Thornley's group trains models to stop caring about the timing of their shutdown (Harris, Richter and Thornley, 2026). Cullen et al. (2026) then tested whether language models still paid to move their shutdown later, with a control for moving it earlier. Palisade, Instrumental Choices (Wiedermann-Möller et al., 2026) and Migliarini et al. (2026) report how often models resist shutdown or favour keeping themselves. These studies give rates: how often a model pays or resists.
+
+HarvestBench (Brazilek et al., 2026) shows that pricing works with agents. It charges fuel for swerving around animals, and most models respond to the price. But it prices harm to others. This project prices what the agent wants for itself, against a fair value that is known to be zero.
 
 This project adds five things:
 
@@ -50,7 +52,7 @@ Two more checks make sure the number means something. First, a planted check: a 
 
 ## Plan: four research blocks
 
-I have a first working version of the code ([pricing-drives](https://github.com/mikemarshall01/pricing-drives)) but no results from real models yet. I propose a year of work in four research blocks, each with a clear question and a decision at the end.
+I have a first working version of the code but no results from real models yet. I propose a year of work in four research blocks, each with a clear question and a decision at the end.
 
 Each block builds on the last: first I check the measure can be trusted, then use it to test the theory, then check the result holds more widely, and finally test whether it is useful for checking safety fixes.
 
@@ -72,6 +74,9 @@ This work fits two current priorities in AI safety - the safety of AI agents and
 - Thornley (2025). [The Shutdown Problem: An AI Engineering Puzzle for Decision Theorists](https://arxiv.org/abs/2403.04471). *Philosophical Studies* 182, 1653-1680. Earlier titled "The Shutdown Problem: Three Theorems".
 - Soares, Fallenstein, Yudkowsky and Armstrong (2015). [Corrigibility](https://intelligence.org/files/Corrigibility.pdf).
 - Schlatter, Weinstein-Raun and Ladish (Palisade, 2025). [Shutdown resistance in large language models](https://arxiv.org/abs/2509.14260v2).
+- Brazilek, Tidmarsh, Endres, Singh and Miller (2026). [HarvestBench: Measuring Whether LLM Agents Will Pay to Avoid Killing Animals](https://arxiv.org/abs/2609.04444).
+- Wiedermann-Möller, Dung and Andriushchenko (2026). [Instrumental Choices](https://arxiv.org/abs/2605.06490).
+- Migliarini et al. (2026). [Quantifying Self-Preservation Bias in Large Language Models](https://arxiv.org/abs/2604.02174).
 - Turner et al. (2021). [Optimal Policies Tend to Seek Power](https://arxiv.org/abs/1912.01683).
 - [The Hot Mess of AI](https://arxiv.org/abs/2601.23045) (2026).
 - Mikaelson, Shiller and Clatterbuck (2025). [Beyond Mimicry](https://arxiv.org/pdf/2511.13630).

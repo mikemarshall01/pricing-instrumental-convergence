@@ -8,7 +8,7 @@ Mike Marshall · October 2026
 >
 > - **Current proposal:** [PROPOSAL.md](PROPOSAL.md) (November 2026). Start here.
 > - **Full working plan:** [PRICING_THE_DRIVES.md](PRICING_THE_DRIVES.md), with the economics toolkit, experiment design, confounds and sources.
-> - **Experiment code:** [pricing-drives](https://github.com/mikemarshall01/pricing-drives), the first working version (calibration, BDM, demand curve, GARP menus, agent shop).
+> - **Experiment code:** a first working version exists (calibration, BDM, demand curve, GARP menus, agent shop). It isn't public yet.
 
 I'm researching whether AI agents acquire resources and resist shutdown beyond what their tasks require, and how this changes as their time horizons grow, by measuring what they are willing to pay for these things. Theory predicts longer horizons strengthen these drives, while recent evidence suggests longer horizons make agents less coherent. I want to test which effect dominates, and what it means for giving agents more autonomy.
 
