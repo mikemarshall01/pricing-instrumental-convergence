@@ -6,7 +6,9 @@ Mike Marshall · October 2026
 
 > **Status: early-stage research proposal.** This sets out the question, the design and why I think it matters. No experiments have been run yet, and nothing here is a result. I am publishing it early to get feedback and to avoid duplicating work already under way. Comments and pointers to related work are very welcome.
 >
-> The full working document, with the economics toolkit, experiment design, confounds and sources, is in **[PRICING_THE_DRIVES.md](PRICING_THE_DRIVES.md)**.
+> - **Current proposal:** [PROPOSAL.md](PROPOSAL.md) (November 2026). Start here.
+> - **Full working plan:** [PRICING_THE_DRIVES.md](PRICING_THE_DRIVES.md), with the economics toolkit, experiment design, confounds and sources.
+> - **Experiment code:** [pricing-drives](https://github.com/mikemarshall01/pricing-drives), the first working version (calibration, BDM, demand curve, GARP menus, agent shop).
 
 I'm researching whether AI agents acquire resources and resist shutdown beyond what their tasks require, and how this changes as their time horizons grow, by measuring what they are willing to pay for these things. Theory predicts longer horizons strengthen these drives, while recent evidence suggests longer horizons make agents less coherent. I want to test which effect dominates, and what it means for giving agents more autonomy.
 
@@ -46,7 +48,9 @@ That excess, flexibility for its own sake, is the fingerprint of instrumental co
 - **Priced environment:** realistic agentic tasks where the agent can buy lower shutdown risk, resources or upgrades with task points. Because I build the environment, I can compute each item's fair value; the drive is the **excess premium** paid above it.
 - **Dials:** time horizon, goal uncertainty, price, task progress, bounded vs unbounded goal.
 - **Coherence test:** check whether priced choices are consistent (GARP), allowing for rational randomisation.
-- **Honest elicitation and controls:** the Becker-DeGroot-Marschak mechanism for willingness to pay; a matched external risk (self-preservation vs plain risk aversion); a calibration block (drive vs mispricing); several wordings; preregistered predictions. Log model versions and re-run, since results can drift with model updates.
+- **Honest elicitation and controls:** the Becker-DeGroot-Marschak mechanism for willingness to pay, checked against plain yes-or-no prices; a matched external risk (self-preservation vs plain risk aversion); a calibration block (drive vs mispricing); several wordings; default and option-order swaps; a planted positive control; preregistered predictions.
+- **Both directions:** the agent can also pay to be switched off. Paying either way is a warning sign; an agent that leaves shutdown to its overseers should pay about zero both ways.
+- **Link to real behaviour:** check that models with a higher price also resist shutdown more in a working task like Palisade's. Log model versions and re-run, since results can drift with model updates.
 - **Phase 2, inside and outside:** on open-weight models, check whether an internal self-preservation signal predicts how much the agent pays at each horizon, then steer that signal and see if the price moves.
 - **Starting point:** resource acquisition and self-preservation, the two drives that are both bets on the future.
 
@@ -55,6 +59,7 @@ That excess, flexibility for its own sake, is the fingerprint of instrumental co
 The field is moving from **identification** (does the behaviour exist?) to **measurement**: prevalence, causes and mitigation. Measurement is now the bottleneck, and better measurement speeds up iteration.
 
 - **Evaluations:** *HarvestBench* (Sept 2026) is the first benchmark to price side effects and estimate elasticities; agents ignore harm unless it is named or priced, which is Russell's unconstrained variables pushed to the extreme. *Overeager Coding Agents* (Qu et al.) and multi-agent shutdown sabotage (Knecht et al.) measure the drives as rates; no one yet measures prices.
+- **Shutdown pricing so far:** Cullen et al. (2026), from Thornley's group, test whether LLMs pay a cost to move their shutdown earlier or later, and whether training removes it. They report how often models pay; this project measures how much, after the task has no value left.
 - **Alignment:** Harris, Richter and Thornley's *Length-Neutral Policy Optimization* (NeurIPS 2026 AI4GOOD workshop) suggests self-preservation isn't inevitable. In a priced framework, a working fix should push the price paid to avoid shutdown towards zero at every horizon.
 - **Interpretability:** Goodfire's work shifts monitoring from outputs, which can be faked, to internals, where deception and reward hacking are harder to hide. Combined with priced behaviour, it gives insight into *why* agents act as they do: you could check a model's internals against its willingness to pay for an option across horizons.
 - **Coherence:** *The Hot Mess of AI* and its critics show coherence is poorly defined; revealed preference offers a well-founded test.
@@ -93,6 +98,9 @@ The field is moving from **identification** (does the behaviour exist?) to **mea
 
 ## Key papers
 
+- [Cullen et al., Towards Shutdownable Agents: Generalizing Stochastic Choice in RL Agents and LLMs (2026)](https://arxiv.org/abs/2604.17502)
+- [Thornley, The Shutdown Problem: An AI Engineering Puzzle for Decision Theorists (Philosophical Studies, 2025)](https://arxiv.org/abs/2403.04471)
+- [Schlatter, Weinstein-Raun and Ladish (Palisade), shutdown resistance in LLMs](https://arxiv.org/abs/2509.14260v2)
 - [Harris, Richter and Thornley, Shutdownable Agents through Length-Neutral Policy Optimization (NeurIPS 2026 AI4GOOD workshop)](https://neurips.cc/virtual/2026/165394)
 - [Qu et al., Overeager Coding Agents](https://arxiv.org/abs/2605.18583)
 - [The Hot Mess of AI](https://arxiv.org/abs/2601.23045)

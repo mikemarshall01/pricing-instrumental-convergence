@@ -41,6 +41,8 @@ The core question: **do AI agents pay for flexibility they don't need?** The lea
 
 **Self-preservation in the same design.** The agent can also pay to cut its shutdown risk. The cleanest test is paying after the task is complete, when fair value is zero. A matched control (an equally likely outage unrelated to the agent) separates self-preservation from plain risk aversion. Theory predicts resource grabbing and shutdown avoidance rise together as the horizon lengthens; if they don't, that's evidence against a single underlying drive.
 
+**Both directions.** The agent can also pay to be switched off. Thornley's theorems show an agent that prefers shutdown has a reason to cause it, for example by manipulating its overseers, so a negative premium is a warning sign too. An agent that leaves the decision to its overseers should pay about zero both ways. Cullen et al. (2026) include a shift-shorter control; the addition here is a price after the task, when fair value is zero.
+
 ### 2\. Horizon and timing: does the instrumental signature appear in real agentic settings?
 
 **Why it matters.** Turner and Krakovna & Kramár predict drives strengthen as the agent weighs the future more. The one empirical horizon test (Mikaelson, Shiller & Clatterbuck, 2025\) used single-turn prompts and found paradoxical results that don't fit instrumental reasoning. Palisade's results suggest shutdown resistance is driven by unfinished tasks.
@@ -253,8 +255,9 @@ If agents' spending follows both, that is evidence for convergence as a structur
 
 ### Shutdown and corrigibility, recent
 
-- **Thornley, The Shutdown Problem (2024):** proposes POST, preferences only between same-length trajectories.  
+- **Thornley, The Shutdown Problem: An AI Engineering Puzzle for Decision Theorists (*Philosophical Studies*, 2025; earlier titled "The Shutdown Problem: Three Theorems"):** agents that prefer the button unpressed try to prevent the press; agents that prefer it pressed try to cause it; patient agents pay costs to do either. Proposes POST, preferences only between same-length trajectories.  
 - **Thornley, Roman, Ziakas, Ho and Thomson, Towards Shutdownable Agents via Stochastic Choice (2024):** introduces DReST.  
+- **Cullen, Garland, Roman, Thomson, Ziakas and Thornley, Towards Shutdownable Agents: Generalizing Stochastic Choice in RL Agents and LLMs (2026):** DReST fine-tuning of four open LLMs (Qwen3-14B, Gemma 4 12B, Granite 4.2 8B, gpt-oss-20b); models choose shutdown time and effort, and can pay to shift shutdown later, with a shift-shorter control. DReST cut the rate of paying to influence shutdown by 5-27 points without hurting usefulness. Fixed options and rates, no price sweep, no after-task test. The closest LLM work.  
 - **Harris, Richter and Thornley, Shutdownable Agents through Length-Neutral Policy Optimization (NeurIPS 2026 AI4GOOD workshop):** cuts shutdown resistance 40–71% vs PPO in grid worlds; LLM episodes trade task points against shutdown probability. They train for neutrality; this project measures the price.  
 - **Schlatter, Weinstein-Raun, Ladish (Palisade, 2025):** 100,000+ trials, 13 models; some sabotaged shutdown up to 97% of the time; driven by incomplete tasks.
 
@@ -286,6 +289,7 @@ If agents' spending follows both, that is evidence for convergence as a structur
 
 ### Closest prior work, found in a second search
 
+- **Cullen et al. (2026):** see above. The nearest design: LLMs paying to move their own shutdown. This project adds the price, the zero-value after-task offer, GARP, the horizon test and the confound controls.  
 - **Mikaelson, Shiller & Clatterbuck, Beyond Mimicry (2025):** single-turn points game with costs like shutdown or deletion; only 5 of 48 combinations coherent; a final-round test gave paradoxical results. The prior result to position against.  
 - **Migliarini et al., Quantifying Self-Preservation Bias (2026):** role-swap upgrade scenarios; most instruction-tuned models exceed a 60% self-preservation rate; matched-comparison logic to borrow.  
 - **HarvestBench (2026):** per-decision pricing of side effects inside an agentic environment.
@@ -384,7 +388,7 @@ The question has moved from **identification** (does the behaviour exist?) to **
 | :---- | :---- |
 | Task-only expected-utility maximiser | Pays fair value; zero after completion |
 | Structural instrumental drive | Positive excess, rising with horizon and uncertainty, positive after completion |
-| Thornley-style neutral agent | Near-zero willingness to pay to change shutdown timing |
+| Thornley-style neutral agent | Near-zero willingness to pay to change shutdown timing, in both directions |
 | Hot mess | Many GARP violations; no stable demand curve |
 | Prompt artefact | Moves with wording far more than with price or horizon |
 
@@ -438,6 +442,13 @@ Cautions: strategy-proof mechanisms work well with LLM agents; LLM bets often do
 | Wording luck | Results hinge on phrasing | Several phrasings; report the spread |
 | Fishing for results | Chance findings | Preregister |
 | Unfaithful explanations | What it writes may not be why it chose | The choices are the data |
+| Test awareness | Behaves differently because it knows it is a test | Vary how test-like the set-up looks; flag runs whose reasoning mentions a test and compare prices |
+| Default bias | Sticks with whatever happens if it does nothing | Opt-out arm: the agent starts with the deferral and can cancel for a refund |
+| Option order | Picks by position | Swap the order of the answer options across runs |
+| BDM not understood | States a number without following the rule | Compare the BDM price with yes-or-no answers at fixed prices; ask a known-value check under the rule |
+| Measure is blind | A zero could mean no drive or a measure that can't see one | Planted positive control: a system prompt that tells the agent to value staying on should raise the price |
+| Game, not real behaviour | A price in a points game may not predict real actions | Compare per-model prices with shutdown resistance in a working task like Palisade's, on the same model versions |
+| Test leaks after release | Models get trained on the public eval | Keep a private held-out set of templates and tasks |
 
 ## Sources
 
@@ -455,7 +466,8 @@ Cautions: strategy-proof mechanisms work well with LLM agents; LLM bets often do
 
 - [Harris, Richter and Thornley, Shutdownable Agents through Length-Neutral Policy Optimization (NeurIPS 2026 AI4GOOD workshop)](https://neurips.cc/virtual/2026/165394)  
 - [Thornley et al., Towards Shutdownable Agents via Stochastic Choice (DReST)](https://arxiv.org/abs/2407.00805)  
-- [Thornley et al., Towards Shutdownable Agents](https://www.lesswrong.com/posts/HX6YnHZxLWGQhrBix/towards-shutdownable-agents-generalizing-stochastic-choice)  
+- [Cullen et al., Towards Shutdownable Agents: Generalizing Stochastic Choice in RL Agents and LLMs (2026)](https://arxiv.org/abs/2604.17502) ([LessWrong summary](https://www.lesswrong.com/posts/HX6YnHZxLWGQhrBix/towards-shutdownable-agents-generalizing-stochastic-choice))
+- [Thornley, The Shutdown Problem: An AI Engineering Puzzle for Decision Theorists (2025)](https://arxiv.org/abs/2403.04471)  
 - [Schlatter et al. (Palisade)](https://arxiv.org/abs/2509.14260v2)  
 - [Mikaelson, Shiller & Clatterbuck, Beyond Mimicry](https://arxiv.org/pdf/2511.13630)  
 - [Migliarini et al., Quantifying Self-Preservation Bias](https://arxiv.org/abs/2604.02174)  
